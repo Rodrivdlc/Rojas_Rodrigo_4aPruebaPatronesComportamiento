@@ -41,17 +41,27 @@ public class HaltCheckerGUI {
 
         // Añadir ActionListener al botón
         checkButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
         String program = (String) programComboBox.getSelectedItem();
+        int counter = 0;
+        try {
+            counter = Integer.parseInt(counterTextField.getText());
+            if (counter <= 0) {
+                JOptionPane.showMessageDialog(frame, "El número inicial del contador debe ser mayor que 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException exception) {
+            JOptionPane.showMessageDialog(frame, "Por favor, introduce un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         boolean willHalt = false;
         try {
             willHalt = HaltChecker.willHalt("src/main/java/Contadores/" + program + "/" + program + ".java");
         } catch (IOException exception) {
             exception.printStackTrace();
         }
-        resultTextArea.setText("El programa " + program + " se detendrá: " + willHalt);
-        }
+        resultTextArea.setText("El programa "  + (willHalt ? " se detiene" : " no se detiene"));    }
 });
 
         // Mostrar la ventana
