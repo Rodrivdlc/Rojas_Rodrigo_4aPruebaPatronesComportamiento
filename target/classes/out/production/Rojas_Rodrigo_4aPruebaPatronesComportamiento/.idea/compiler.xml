@@ -9,5 +9,8 @@
         <module name="Rojas_Rodrigo_4aPruebaPatronesComportamiento" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Rojas_Rodrigo_4aPruebaPatronesComportamiento" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
