@@ -1,8 +1,10 @@
+
 package Contadores.CountDown;
 
 public class Countdown {
     public static void main(String[] args) {
-        for (int i = 10; i >= 0; i--) {
+        int start = Integer.parseInt(args[0]);
+        for (int i = start; i >= 0; i--) {
             System.out.println(i);
             try {
                 Thread.sleep(1000); // pausa el programa por 1 segundo

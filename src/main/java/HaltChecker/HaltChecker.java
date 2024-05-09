@@ -3,7 +3,7 @@ package HaltChecker;
 import java.nio.file.*;
 import java.io.IOException;
 import java.util.regex.*;
-
+//para determinar si el programa se detendrá el bucle para ver si es creciente o decreciente
 public class HaltChecker {
     public static boolean willHalt(String filePath) throws IOException {
         String code = new String(Files.readAllBytes(Paths.get(filePath)));
