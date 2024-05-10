@@ -1,9 +1,9 @@
-package Reverse;
+package Reverser;
 
 import HaltChecker.HaltChecker;
 import java.io.IOException;
 
-public class Reverse {
+public class Reverser {
     public static void main(String[] args) {
         String programPath = args[0];
 
