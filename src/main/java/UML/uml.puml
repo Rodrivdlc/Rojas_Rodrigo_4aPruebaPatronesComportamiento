@@ -1,0 +1,26 @@
+@startuml
+
+class Countdown {
+    + main(String[] args): void
+}
+
+class CountUp {
+    + main(String[] args): void
+}
+
+class HaltChecker {
+    + willHalt(String filePath): boolean
+}
+
+class Reverser {
+    + main(String[] args): void
+}
+
+class GUI {
+    + main(String[] args): void
+}
+
+GUI --> HaltChecker : Usa
+Reverser --> HaltChecker : Usa
+
+@enduml
