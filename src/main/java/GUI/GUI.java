@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import HaltChecker.HaltChecker;
-public class HaltCheckerGUI {
+public class GUI {
     public static void main(String[] args) {
         // Crear la ventana principal
         JFrame frame = new JFrame("Halt Checker");
@@ -66,5 +66,29 @@ public class HaltCheckerGUI {
 
         // Mostrar la ventana
         frame.setVisible(true);
+
+        // Añadir etiqueta y botón para ejecutar el Reverse
+        JLabel reverseLabel = new JLabel("Analizar con Reverse:");
+        panel.add(reverseLabel);
+        JButton reverseButton = new JButton("Analizar programa con Reverse");
+        panel.add(reverseButton);
+
+        // Añadir ActionListener al botón de Reverse
+        reverseButton.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String program = (String) programComboBox.getSelectedItem();
+        try {
+            boolean willHalt = HaltChecker.willHalt("src/main/java/Contadores/" + program + "/" + program + ".java");
+            if (willHalt) {
+                JOptionPane.showMessageDialog(frame, "El programa Reverse ha entrado en un bucle infinito.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(frame, "El programa Reverse se ha detenido.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+});
     }
 }
