@@ -22,13 +22,4 @@ public class HaltChecker {
 
         throw new IllegalArgumentException("No se pudo determinar el comportamiento del programa.");
     }
-
-    /*public static void main(String[] args) {
-        try {
-            System.out.println(willHalt("src/main/java/Contadores/CountDown/Countdown.java"));
-            System.out.println(willHalt("src/main/java/Contadores/CountUp/CountUp.java"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 }
