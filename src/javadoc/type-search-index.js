@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Contadores.CountDown","l":"Countdown"},{"p":"Contadores.CountUp","l":"CountUp"},{"p":"GUI","l":"GUI"},{"p":"HaltChecker","l":"HaltChecker"},{"p":"HaltChecker","l":"HaltCheckerTest"},{"p":"Reverser","l":"Reverser"},{"p":"Reverser","l":"ReverserTest"}];updateSearchResults();
