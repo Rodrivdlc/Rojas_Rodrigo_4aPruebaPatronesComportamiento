@@ -1,31 +1,24 @@
 package HaltChecker;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 
-public class HaltCheckerTest {
+import static org.junit.jupiter.api.Assertions.*;
 
+public class HaltCheckerTest {
     @Test
     public void testWillHaltForCountDown() {
-        try {
-            assertTrue(HaltChecker.willHalt("src/main/java/Contadores/CountDown/Countdown.java"));
-        } catch (IOException e) {
-            fail("IOException lanzada durante la prueba: " + e.getMessage());
-        }
+        assertDoesNotThrow(() -> assertTrue(HaltChecker.willHalt("src/main/java/Contadores/CountDown/Countdown.java")));
     }
 
     @Test
     public void testWillNotHaltForCountUp() {
-        try {
-            assertFalse(HaltChecker.willHalt("src/main/java/Contadores/CountUp/CountUp.java"));
-        } catch (IOException e) {
-            fail("IOException lanzada durante la prueba: " + e.getMessage());
-        }
+        assertDoesNotThrow(() -> assertFalse(HaltChecker.willHalt("src/main/java/Contadores/CountUp/CountUp.java")));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testInvalidFilePath() throws IOException {
-        HaltChecker.willHalt("archivo/inexistente.java");
+    @Test
+    public void testInvalidFilePath() {
+        assertThrows(IOException.class, () -> HaltChecker.willHalt("archivo/inexistente.java"));
     }
 }
